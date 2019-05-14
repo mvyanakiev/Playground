@@ -37,15 +37,7 @@ public class Record {
     }
 
     public void setDateFrom(String dateFrom) {
-
-        //todo create method from this
-
-        //todo if null date.now
-        try {
-            this.dateFrom = myFormat.parse(dateFrom);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        this.dateFrom = dataParser(dateFrom);
     }
 
     public Date getDateTo() {
@@ -53,11 +45,19 @@ public class Record {
     }
 
     public void setDateTo(String dateTo) {
+        if (dateTo == null || dateTo.isEmpty()) {
+            this.dateTo = new Date();
+        } else {
+            this.dateTo = dataParser(dateTo);
+        }
+    }
 
+    private Date dataParser(String date) {
         try {
-            this.dateTo = myFormat.parse(dateTo);
+            return myFormat.parse(date);
         } catch (ParseException e) {
             e.printStackTrace();
+            return null;
         }
     }
 }

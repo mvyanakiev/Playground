@@ -2,7 +2,6 @@ package type1;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -40,13 +39,21 @@ public class TestRun {
         rec4.setDateTo("2001-07-07");
         records.add(rec4);
 
+        Record rec5 = new Record();
+        rec5.setEmployeeId("5");
+        rec5.setProjectId("prj3");
+        rec5.setDateFrom("2001-01-01");
+        rec5.setDateTo(null);
+        records.add(rec5);
 
-//        String empId1 = "";
-//        String empId2 = "";
-//        String prjId = "";
-//        long period = 0L;
+//        List<CollectiveProject> collectiveProjects = new LinkedList<>();
 
-        List<CollectiveProject> collectiveProjects = new LinkedList<>();
+        CollectiveProject project = new CollectiveProject();
+        project.setPeriod(0);
+        project.setFirstEmployeeId("");
+        project.setSecondEmployeeId("");
+        project.setProjectId("");
+
 
 
         for (int i = 0; i < records.size(); i++) {
@@ -59,41 +66,29 @@ public class TestRun {
 
                     long period = getPeriod(first.getDateFrom(), first.getDateTo(), second.getDateFrom(), second.getDateTo());
 
-                    if (period > 0) {
+                    if (period > 0 && period > project.getPeriod()) {
 
-                        CollectiveProject project = new CollectiveProject();
                         project.setPeriod(period);
                         project.setFirstEmployeeId(first.getEmployeeId());
                         project.setSecondEmployeeId(second.getEmployeeId());
                         project.setProjectId(first.getProjectId());
 
-                        collectiveProjects.add(project);
+//                        collectiveProjects.add(project);
                     }
-
-
-//                    long diff = first.getDateTo().getTime() - first.getDateFrom().getTime();
-//
-//                    if (diff > period) {
-//                        period = diff;
-//                        empId1 = first.getEmployeeId();
-//                        empId2 = second.getEmployeeId();
-//
-//                        prjId = first.getProjectId();
-//                    }
-
-
                 }
             }
         }
 
-
-        for (CollectiveProject collectiveProject : collectiveProjects) {
-            System.out.println(collectiveProject.toString());
+        if (project.getPeriod() == 0) {
+            System.out.println("There is no project on the set parameters!");
+        } else {
+            System.out.println(project.toString());
         }
 
 
-//        long days = TimeUnit.DAYS.convert(period, TimeUnit.MILLISECONDS);
-//        System.out.printf("Days %d , Employee1 is %s, Employee2 is %s, Project ID %s", days, empId1, empId2, prjId);
+//        for (CollectiveProject collectiveProject : collectiveProjects) {
+//            System.out.println(collectiveProject.toString());
+//        }
 
     }
 
