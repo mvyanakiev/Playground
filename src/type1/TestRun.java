@@ -14,6 +14,9 @@ public class TestRun {
 
         List<Record> records = new ArrayList<>();
 
+
+
+
         FileInputStream fileStream = new FileInputStream(FILE_PATH);
         BufferedReader br = new BufferedReader(new InputStreamReader(fileStream));
 
@@ -39,6 +42,14 @@ public class TestRun {
         }
 
         fileStream.close();
+
+
+
+
+
+
+
+
 
         CollectiveProject project = new CollectiveProject();
         project.setPeriod(0);

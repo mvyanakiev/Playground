@@ -6,47 +6,46 @@ import java.util.Date;
 
 import static type1.Config.*;
 
-public class Record {
+class Record {
 
     private String employeeId;
     private String projectId;
     private Date dateFrom;
     private Date dateTo;
-
     private SimpleDateFormat myFormat = new SimpleDateFormat(DATA_FORMAT);
 
-    public Record() {
+    Record() {
     }
 
-    public String getEmployeeId() {
+    String getEmployeeId() {
         return this.employeeId;
     }
 
-    public void setEmployeeId(String employeeId) {
+    void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
     }
 
-    public String getProjectId() {
+    String getProjectId() {
         return this.projectId;
     }
 
-    public void setProjectId(String projectId) {
+    void setProjectId(String projectId) {
         this.projectId = projectId;
     }
 
-    public Date getDateFrom() {
+    Date getDateFrom() {
         return this.dateFrom;
     }
 
-    public void setDateFrom(String dateFrom) {
+    void setDateFrom(String dateFrom) {
         this.dateFrom = dataParser(dateFrom);
     }
 
-    public Date getDateTo() {
+    Date getDateTo() {
         return this.dateTo;
     }
 
-    public void setDateTo(String dateTo) {
+    void setDateTo(String dateTo) {
         if (dateTo == null || dateTo.isEmpty()) {
             this.dateTo = new Date();
         } else {

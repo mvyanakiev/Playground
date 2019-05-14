@@ -7,14 +7,14 @@ public class CollectiveProject {
     private String secondEmployeeId;
     private long period;
 
-    public CollectiveProject() {
+    CollectiveProject() {
     }
 
     public String getProjectId() {
         return this.projectId;
     }
 
-    public void setProjectId(String projectId) {
+    void setProjectId(String projectId) {
         this.projectId = projectId;
     }
 
@@ -22,7 +22,7 @@ public class CollectiveProject {
         return this.firstEmployeeId;
     }
 
-    public void setFirstEmployeeId(String firstEmployeeId) {
+    void setFirstEmployeeId(String firstEmployeeId) {
         this.firstEmployeeId = firstEmployeeId;
     }
 
@@ -30,15 +30,15 @@ public class CollectiveProject {
         return this.secondEmployeeId;
     }
 
-    public void setSecondEmployeeId(String secondEmployeeId) {
+    void setSecondEmployeeId(String secondEmployeeId) {
         this.secondEmployeeId = secondEmployeeId;
     }
 
-    public long getPeriod() {
+    long getPeriod() {
         return this.period;
     }
 
-    public void setPeriod(long period) {
+    void setPeriod(long period) {
         this.period = period;
     }
 
@@ -52,5 +52,4 @@ public class CollectiveProject {
 
         return result.toString().trim();
     }
-
 }
