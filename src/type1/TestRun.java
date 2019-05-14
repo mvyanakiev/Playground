@@ -1,16 +1,18 @@
 package type1;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static type1.Config.FILE_PATH;
 import static type1.Config.NO_PROJECTS_MESSAGE;
 
 public class TestRun {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         List<Record> records = new ArrayList<>();
 
@@ -49,12 +51,15 @@ public class TestRun {
 //        rec5.setDateTo(null);
 //        records.add(rec5);
 
-        String input = "123, prj1, 2000-01-01, 2001-01-01 \n 256, prj2, 2000-01-01, ";
 
-        String[] lines = input.split("\n");
+        FileInputStream fileStream = new FileInputStream(FILE_PATH);
+        BufferedReader br = new BufferedReader(new InputStreamReader(fileStream));
 
-        for (String line : lines) {
-            String [] token = line.split(", ");
+        String strLine;
+
+        while ((strLine = br.readLine()) != null)   {
+
+            String [] token = strLine.split(", ");
 
             Record record = new Record();
             record.setEmployeeId(token[0].trim());
@@ -67,11 +72,15 @@ public class TestRun {
                 record.setDateTo("");
             }
 
-
-
-
             records.add(record);
         }
+
+        fileStream.close();
+
+
+
+
+
 
 
 //        List<CollectiveProject> collectiveProjects = new LinkedList<>();
