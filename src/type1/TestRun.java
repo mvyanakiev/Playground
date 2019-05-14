@@ -3,7 +3,6 @@ package type1;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -16,42 +15,6 @@ public class TestRun {
 
         List<Record> records = new ArrayList<>();
 
-//        Record rec1 = new Record();
-//        rec1.setEmployeeId("1");
-//        rec1.setProjectId("prj1");
-//        rec1.setDateFrom("2000-01-01");
-//        rec1.setDateTo("2001-01-01");
-//        records.add(rec1);
-//
-//        Record rec2 = new Record();
-//        rec2.setEmployeeId("2");
-//        rec2.setProjectId("prj2");
-//        rec2.setDateFrom("2000-01-01");
-//        rec2.setDateTo("2002-01-01");
-//        records.add(rec2);
-//
-//        Record rec3 = new Record();
-//        rec3.setEmployeeId("3");
-//        rec3.setProjectId("prj3");
-//        rec3.setDateFrom("2000-01-01");
-//        rec3.setDateTo("2003-01-01");
-//        records.add(rec3);
-//
-//        Record rec4 = new Record();
-//        rec4.setEmployeeId("4");
-//        rec4.setProjectId("prj3");
-//        rec4.setDateFrom("2000-01-01");
-//        rec4.setDateTo("2001-07-07");
-//        records.add(rec4);
-//
-//        Record rec5 = new Record();
-//        rec5.setEmployeeId("5");
-//        rec5.setProjectId("prj3");
-//        rec5.setDateFrom("2001-01-01");
-//        rec5.setDateTo(null);
-//        records.add(rec5);
-
-
         FileInputStream fileStream = new FileInputStream(FILE_PATH);
         BufferedReader br = new BufferedReader(new InputStreamReader(fileStream));
 
@@ -62,6 +25,7 @@ public class TestRun {
             String [] token = strLine.split(", ");
 
             Record record = new Record();
+
             record.setEmployeeId(token[0].trim());
             record.setProjectId(token[1].trim());
             record.setDateFrom(token[2].trim());
@@ -76,14 +40,6 @@ public class TestRun {
         }
 
         fileStream.close();
-
-
-
-
-
-
-
-//        List<CollectiveProject> collectiveProjects = new LinkedList<>();
 
         CollectiveProject project = new CollectiveProject();
         project.setPeriod(0);
@@ -108,8 +64,6 @@ public class TestRun {
                         project.setFirstEmployeeId(first.getEmployeeId());
                         project.setSecondEmployeeId(second.getEmployeeId());
                         project.setProjectId(first.getProjectId());
-
-//                        collectiveProjects.add(project);
                     }
                 }
             }
@@ -120,12 +74,6 @@ public class TestRun {
         } else {
             System.out.println(project.toString());
         }
-
-
-//        for (CollectiveProject collectiveProject : collectiveProjects) {
-//            System.out.println(collectiveProject.toString());
-//        }
-
     }
 
 
