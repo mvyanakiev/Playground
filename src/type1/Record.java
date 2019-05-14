@@ -4,6 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static type1.Config.*;
+
 public class Record {
 
     private String employeeId;
@@ -11,7 +13,7 @@ public class Record {
     private Date dateFrom;
     private Date dateTo;
 
-    private static SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd");
+    private SimpleDateFormat myFormat = new SimpleDateFormat(DATA_FORMAT);
 
     public Record() {
     }
