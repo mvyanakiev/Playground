@@ -1,7 +1,5 @@
 package type1;
 
-import java.util.concurrent.TimeUnit;
-
 public class CollectiveProject {
 
     private String projectId;
@@ -45,16 +43,12 @@ public class CollectiveProject {
     }
 
     @Override
-    public String toString(){
-
-        return "Employee with ID: "
-                + this.firstEmployeeId
-                + " and Employee with ID: "
-                + this.secondEmployeeId
-                + " work together "
-                + this.period
-                + " days on Project with ID: "
-                + this.projectId;
+    public String toString() {
+        return String.format("Employee with ID: %s and Employee with ID: %s work together %d days on Project with ID: %s.",
+                this.firstEmployeeId,
+                this.secondEmployeeId,
+                this.period,
+                this.projectId);
     }
 
 }
