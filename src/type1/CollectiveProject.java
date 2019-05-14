@@ -44,11 +44,13 @@ public class CollectiveProject {
 
     @Override
     public String toString() {
-        return String.format("Employee with ID: %s and Employee with ID: %s work together %d days on Project with ID: %s.",
-                this.firstEmployeeId,
-                this.secondEmployeeId,
-                this.period,
-                this.projectId);
+        StringBuilder result = new StringBuilder();
+        result.append(String.format("First employee ID: %s", this.firstEmployeeId)).append(System.lineSeparator());
+        result.append(String.format("Second employee ID: %s", this.secondEmployeeId)).append(System.lineSeparator());
+        result.append(String.format("Project ID: %s", this.projectId)).append(System.lineSeparator());
+        result.append(String.format("Days: %d", this.period));
+
+        return result.toString().trim();
     }
 
 }

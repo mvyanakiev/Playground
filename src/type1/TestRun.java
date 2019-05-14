@@ -6,8 +6,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import static type1.Config.FILE_PATH;
-import static type1.Config.NO_PROJECTS_MESSAGE;
+import static type1.Config.*;
 
 public class TestRun {
 
@@ -70,7 +69,7 @@ public class TestRun {
         }
 
         if (project.getPeriod() == 0) {
-            System.out.println(NO_PROJECTS_MESSAGE);
+            System.out.println(NO_ANSWER_MESSAGE);
         } else {
             System.out.println(project.toString());
         }
@@ -89,7 +88,6 @@ public class TestRun {
         } else {
             return 0;
         }
-
     }
 }
 
