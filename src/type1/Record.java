@@ -38,6 +38,9 @@ public class Record {
 
     public void setDateFrom(String dateFrom) {
 
+        //todo create method from this
+
+        //todo if null date.now
         try {
             this.dateFrom = myFormat.parse(dateFrom);
         } catch (ParseException e) {
