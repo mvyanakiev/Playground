@@ -28,7 +28,7 @@ public class FruitBoxes {
                 rest += list.get(j);
             }
 
-            if (max + rest <= max) {
+            if (max + rest < max) {
                 break;
             }
         }
@@ -39,7 +39,5 @@ public class FruitBoxes {
         } else {
             System.out.println("Do not buy anything");
         }
-
-
     }
 }

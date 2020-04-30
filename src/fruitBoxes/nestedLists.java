@@ -15,15 +15,15 @@ public class nestedLists {
 
         mans.add("pesho");
         mans.add("ivan");
-//        mans.add("angel");
+        mans.add("angel");
 
         woman.add("ina");
         woman.add("ani");
-        woman.add("katya");
+//        woman.add("katya");
 //        woman.add("vanya");
 
         pets.add("cat");
-        pets.add("dog");
+//        pets.add("dog");
 
         List<List<String>> lists = new ArrayList<>();
         lists.add(mans);
@@ -38,23 +38,24 @@ public class nestedLists {
 //
 //            }
 //        }
-        List<String> result = new ArrayList<>();
+//        List<String> result = new ArrayList<>();
 
-        generatePermutations(lists, result, 0, "");
-//        var result = cartesianProductWithStreams(lists);
+//        generatePermutations(lists, result, 0, "");
+        var result = cartesianProductWithStreams(lists);
         result.forEach(System.out::println);
+
+        for (List<String> strings : result) {
+
+            strings.size();
+
+        }
+
     }
-
-
-
-
-
-
 
 
     public static void generatePermutations(List<List<String>> lists, List<String> result, int depth, String current) {
         if (depth == lists.size()) {
-            result.add(current);
+            result.add(current.trim());
             return;
         }
 
@@ -62,11 +63,6 @@ public class nestedLists {
             generatePermutations(lists, result, depth + 1, current + " " + lists.get(depth).get(i));
         }
     }
-
-
-
-
-
 
     private static <T> List<List<T>> flatMapper(List<List<T>> lists, List<T> list) {
         return list.stream().flatMap(t -> mapper(t, lists)).collect(toList());
