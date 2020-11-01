@@ -11,7 +11,6 @@ import static type1.Config.*;
 public class TestRun {
 
     public static void main(String[] args) throws IOException {
-
         List<Record> records = new ArrayList<>();
 
         FileInputStream fileStream = new FileInputStream(FILE_PATH);
@@ -39,14 +38,6 @@ public class TestRun {
         }
 
         fileStream.close();
-
-
-
-
-
-
-
-
 
         CollectiveProject project = new CollectiveProject();
         project.setPeriod(0);
@@ -98,6 +89,3 @@ public class TestRun {
         }
     }
 }
-
-
-
