@@ -14,9 +14,6 @@ public class TestRun {
 
         List<Record> records = new ArrayList<>();
 
-
-
-
         FileInputStream fileStream = new FileInputStream(FILE_PATH);
         BufferedReader br = new BufferedReader(new InputStreamReader(fileStream));
 
