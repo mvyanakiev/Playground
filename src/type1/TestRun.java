@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
 import static type1.Config.*;
 
 public class TestRun {
-
     public static void main(String[] args) throws IOException {
         List<Record> records = new ArrayList<>();
 
@@ -44,7 +43,6 @@ public class TestRun {
         project.setFirstEmployeeId("");
         project.setSecondEmployeeId("");
         project.setProjectId("");
-
 
         for (int i = 0; i < records.size(); i++) {
             for (int j = i + 1; j < records.size(); j++) {
