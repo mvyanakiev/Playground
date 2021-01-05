@@ -40,17 +40,19 @@ public class Solution {
     }
 
     private static final Scanner scanner = new Scanner(System.in);
+    private static final int ARR_SIZE = 6;
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+//        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src/HR_DS/file.txt"));
 
-        int[][] arr = new int[6][6];
+        int[][] arr = new int[ARR_SIZE][ARR_SIZE];
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < ARR_SIZE; i++) {
             String[] arrRowItems = scanner.nextLine().split(" ");
             scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-            for (int j = 0; j < 6; j++) {
+            for (int j = 0; j < ARR_SIZE; j++) {
                 int arrItem = Integer.parseInt(arrRowItems[j]);
                 arr[i][j] = arrItem;
             }

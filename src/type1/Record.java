@@ -12,7 +12,7 @@ class Record {
     private String projectId;
     private Date dateFrom;
     private Date dateTo;
-    private SimpleDateFormat myFormat = new SimpleDateFormat(DATA_FORMAT);
+    private final SimpleDateFormat myFormat = new SimpleDateFormat(DATA_FORMAT);
 
     Record() {
     }
