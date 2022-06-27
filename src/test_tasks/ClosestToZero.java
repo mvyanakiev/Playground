@@ -1,4 +1,4 @@
-package AmadeusTest;
+package test_tasks;
 
 import java.io.PrintStream;
 import java.util.Arrays;

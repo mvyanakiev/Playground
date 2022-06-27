@@ -1,4 +1,4 @@
-package AmadeusTest;
+package test_tasks;
 
 abstract class Animal {
     protected String name;

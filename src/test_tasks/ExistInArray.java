@@ -1,4 +1,4 @@
-package AmadeusTest;
+package test_tasks;
 
 class ExistInArray {
 

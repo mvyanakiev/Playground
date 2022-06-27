@@ -1,4 +1,4 @@
-package AmadeusTest;
+package test_tasks;
 
 import java.util.Scanner;
 
@@ -27,14 +27,25 @@ public class ThereIsNoSpoon {
         for (int h = 0; h < height; h++) {
             for (int w = 0; w < width; w++) {
 
-                if (board[h][w] == '0' && h + 1 <= height - 1 && w + 1 <= width - 1) {
-                    if (board[h + 1][w] == '0' && board[h][w + 1] == '0') {
-                        System.out.println(format("%d %d %d %d %d %d", w, h, w+1, h, w, h+1));
-                    }
+                if (board[h][w] == '0'
+                    && h + 1 <= height - 1
+                    && w + 1 <= width - 1
+                    && board[h + 1][w] == '0'
+                    && board[h][w + 1] == '0') {
+
+                    System.out.println(format("%d %d %d %d %d %d", h, w, w + 1, h, w, h + 1));
+
                 } else {
-                    System.out.println(format("%d %d -1 -1 -1 -1", w, h));
+                    System.out.println(format("%d %d -1 -1 -1 -1", h, w));
                 }
             }
         }
     }
 }
+
+//5
+//4
+//.....
+//00...
+//0.00.
+//..0..

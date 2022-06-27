@@ -1,4 +1,4 @@
-package AmadeusTest;
+package test_tasks;
 
 import java.util.Date;
 
