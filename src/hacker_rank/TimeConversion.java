@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class ТimeConversion {
+public class TimeConversion {
     public static void main(String[] args) throws ParseException {
         System.out.println(timeConversion("07:12:13PM"));
     }
